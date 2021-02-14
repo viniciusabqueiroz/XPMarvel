@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.character_detail.presentation.CharacterDetailFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.xpmarvel.ui.character_detail.view_model.CharacterDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/characterImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/character_image_view_height"
+                app:image="@{viewModel.image}"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholder="@{@drawable/ic_placeholder}" />
+
+            <TextView
+                android:id="@+id/characterDescTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:text="@{viewModel.desc}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_description"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/characterImageView"
+                tools:text="No description" />
+
+            <TextView
+                android:id="@+id/comicsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/extended_margin"
+                android:text="@string/comics"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/characterDescTextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comicsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/half_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comicsTextView" />
+
+            <TextView
+                android:id="@+id/seriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_default"
+                android:text="@string/series"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comicsRecyclerView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seriesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/half_margin"
+                android:layout_marginBottom="@dimen/half_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seriesTextView" />
+
+            <TextView
+                android:id="@+id/emptyComicsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:text="@string/empty_comics"
+                android:textSize="@dimen/font_size_body"
+                app:layout_constraintStart_toStartOf="@+id/comicsTextView"
+                app:layout_constraintTop_toBottomOf="@+id/comicsTextView"
+                app:visibleOrGone="@{viewModel.hasComics()}" />
+
+            <TextView
+                android:id="@+id/emptySeriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:text="@string/empty_series"
+                android:textSize="@dimen/font_size_body"
+                app:layout_constraintStart_toStartOf="@+id/seriesTextView"
+                app:layout_constraintTop_toBottomOf="@+id/seriesTextView"
+                app:visibleOrGone="@{viewModel.hasSeries()}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

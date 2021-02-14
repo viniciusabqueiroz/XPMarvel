@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">XPMarvel</string>
+    <string name="characters">Characters</string>
+    <string name="favorites">Favorites</string>
+    <string name="empty">Empty</string>
+    <string name="comics">Comics</string>
+    <string name="series">Series</string>
+    <string name="added_to_favorites">Added to favorites</string>
+    <string name="empty_comics">Empty Comics</string>
+    <string name="empty_series">Empty Series</string>
+</resources>
