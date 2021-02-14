@@ -4,9 +4,9 @@
 XPMARVEL - Android Challenge
 ===========================================
 
-<h2>Requirements</h2>
-
 These are the Android mobile challenge.
+
+<h2>Requirements</h2>
 
 * **On your computer**. Download and install both JDK 1.8 and Android Studio:
     Android Studio - https://developer.android.com/studio/
