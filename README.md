@@ -24,7 +24,7 @@ These are the Android mobile challenge.
     PRIVATE_KEY and PUBLIC_KEY must be generated
     For more information visit [Marvel API](https://developer.marvel.com/docs).
     
-<h3>Resources used on this project</h3>
+<h2>Resources used on this project</h2>
 
  - [Kotlin] Modern programming language for native Android development;
  - [Clean Architecture] Software design principles that allow for SOLID layering of the app, making the app scalable, agile and robust;
@@ -36,7 +36,7 @@ These are the Android mobile challenge.
  - [Android Architecture Components] Android architecture components are a collection of libraries that help you design robust, testable, and maintainable apps;
  - [DataBinding] Feature that ensures null-safety on calling views from a given layout;
 
-<h3>License</h3>
+<h2>License</h2>
 
    MIT License
 
